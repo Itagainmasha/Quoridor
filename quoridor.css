@@ -116,4 +116,38 @@ menu {
 	text-align: center;
 	margin-top: 40%;
 } 
-/* todo cell, border, view for victory phase
+.cell {
+    background-color: #C3FFFD;
+    border-radius: 3px;
+    width: 8.5%;
+    height: 8.5%;
+    display: inline-block;
+}
+.cell:hover {
+    background-color: #8abdbb;
+}
+.cell.possible {
+    background-color: #3f928d;
+}
+.v-border {
+    background-color: #E35600;
+    display: inline-block;
+    width: 2.93%;
+    height: 8.5%;
+    /* margin: 0 4px; */
+}
+.h-border {
+    background-color: #E35600;
+    display: inline-block;
+    height: 2.93%;
+    width: 8.5%;
+    /* margin: 4px 0; */
+}
+.inter {
+    background-color: #E35600;
+    display: inline-block;
+    height: 2.93%;
+    width: 2.93%;
+    /* margin: 4px; */
+}
+/* todo cell, border, view for victory phase ++++++++++++++
