@@ -109,5 +109,11 @@ menu {
 	color: red;
 }
 
-
+.victory {
+	font-size: 42pt;
+	color: lightcyan;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 40%;
+} 
 /* todo cell, border, view for victory phase
