@@ -150,4 +150,8 @@ menu {
     width: 2.93%;
     /* margin: 4px; */
 }
+
+.border {
+	z-index: 1001;
+} 
 /* todo cell, border, view for victory phase ++++++++

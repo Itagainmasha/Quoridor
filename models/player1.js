@@ -4,7 +4,7 @@ import Init from "models/init.js";
 const Player1 = {
     x: parseInt(Field.size / 2),
     y: Field.size - 1,
-    walls: Init.init_walls,
+    walls: Init.INIT_WALLS,
 
     setX(x) {
         if (x >= 0 && x < Field.size)
@@ -15,7 +15,7 @@ const Player1 = {
             this.y = y;
     },
     setWalls(walls) {
-        if (walls >= 0 && walls <= Init.init_walls)
+        if (walls >= 0 && walls <= Init.INIT_WALLS)
             this.walls = walls;
     },
 }
