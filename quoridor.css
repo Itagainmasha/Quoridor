@@ -115,6 +115,13 @@ menu {
 	text-transform: uppercase;
 	text-align: center;
 	margin-top: 40%;
+}
+
+.hovered-border {
+    opacity: 1 !important;
+}
+.activated-border {
+    opacity: 1 !important;
 } 
 .cell {
     background-color: #C3FFFD;
