@@ -2,8 +2,8 @@ import Field from "models/field.js";
 import Init from "models/init.js";
 
 const Player1 = {
-    x: parseInt(Field.size / 2),
-    y: Field.size - 1,
+    x: 4, //parseInt(Field.size / 2),
+    y: 4, //Field.size - 1,
     walls: Init.INIT_WALLS,
 
     setX(x) {

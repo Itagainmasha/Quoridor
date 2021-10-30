@@ -1,6 +1,6 @@
-import Field from "../models/field.js";
-import Player1 from "../models/player1.js";
-import Player2 from "../models/player2.js";
+import Field from "models/field.js";
+import Player1 from "models/player1.js";
+import Player2 from "models/player2.js";
 
 const BlockRow = (element, row) => {
     for (let i = 1; i <= 17; i++) {

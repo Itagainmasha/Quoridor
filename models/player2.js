@@ -1,9 +1,9 @@
-import Field from "../models/field.js";
-import Init from "../models/init.js";
+import Field from "models/field.js";
+import Init from "models/init.js";
 
  const Player2 = {
-     x: parseInt(Field.size / 2),
-     y: 0,
+     x: 4, // parseInt(Field.size / 2),
+     y: 5, //0
      walls: Init.INIT_WALLS,
 
      setX(x) {

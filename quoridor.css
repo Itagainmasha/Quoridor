@@ -74,8 +74,8 @@ menu {
 	z-index: 100;
 }
 .player {
-	width: 30px;
-	height: 30px;
+	width: 45%;
+	height: 45%;
 	display: block;
 	margin: 50% auto;
 	transform: translateY(-50%);

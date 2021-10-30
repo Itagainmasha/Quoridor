@@ -5,30 +5,26 @@ import {
     InitField,
     RenderField,
 } from "controllers/field_controller.js";
-import { MakeAMove } from "./controllers/PlayersController.js";
+import { MakeAMove } from "controllers/PlayersController.js";
 
 InitField();
 
 document.querySelector("#game_pl_comp").addEventListener("click", (e) => {
-    Game.setGameType(Init.PLAYER_COMPUTER);
-    init_game();
-
-    game_loop();
+    init_game(Init.PLAYER_COMPUTER)
 });
 
 document.querySelector("#game_pl_pl").addEventListener("click", (e) => {
-    Game.setGameType(Init.PLAYER_PLAYER);
-    init_game();
-
-    game_loop();
+    init_game(Init.PLAYER_PLAYER)
 });
 
-const init_game = () => {
+const init_game = (game_type) => {
+    Game.setGameType(game_type);
+    RenderField()
     InitBorderEvents();
 };
 
 const game_loop = () => {
-    RenderField();
+    //RenderField();
     // Game.current.addEventListener(
     //     "moved",
     //     Game.is_going ? game_loop : () => {}
