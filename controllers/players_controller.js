@@ -1,15 +1,15 @@
 //const moved = new Event('pl_moved');
 
 import Game from "models/game.jss";
+import Init from "models/Init.js";
  import Player1 from "models/player1.js";
  import Player2 from "models/player2.js";
- import { AvailableMovesView } from "views/available_moves";
  import { RenderPlayers } from "views/render_playersView.js";
  import {
      InitPlayerCellEvents,
      RemovePlayerCellEvents,
  } from "/field_controller.js";
- import { checkVictory } from "/game_controller.js";
+ import { checkVictory, randomStep } from "./GameController.js";
 export const MakeAMove = (x, y) => {
     const player = Game.current();
    
@@ -27,23 +27,18 @@ export const MakeAMove = (x, y) => {
     checkVictory();
 };
 
-export const DisplayAvailableMoves = (cell, id) => {
-    const x = Game.current().x;
-    const y = Game.current().y;
+if (Game.game_type == Init.PLAYER_COMPUTER && Game.current_pl == "2") {
+    debugger;
+    randomStep();
+}
+export const DisplayAvailableMoves = (player, { x, y }) => {
+    if (x < 0 || x > 8 || y < 0 || y > 8) return [];
      let coordinates = [];
      const allElems = Array.from(document.querySelector(".field-grid").children);
+     const cell = Array.from(document.querySelectorAll(".cell"))[y * 9 + x];
      const gridCell_id = allElems.indexOf(cell);
+     const otherPlayer = player == Player1 ? Player2 : Player1;
 
-     if (
-        x + (1 % 9) != 0 &&
-        !cell.nextSibling?.classList.contains("activated-border")
-    )
-     coordinates.push({ x: x + 1, y: y });
-     if (
-        x % 9 != 0 &&
-        !cell.previousSibling?.classList.contains("activated-border")
-    )
-     coordinates.push({ x: x - 1, y: y });
      if (
         y > 0 &&
         !allElems[gridCell_id - 17]?.classList.contains("activated-border")
@@ -54,8 +49,17 @@ export const DisplayAvailableMoves = (cell, id) => {
         !allElems[gridCell_id + 17]?.classList.contains("activated-border")
     )
      coordinates.push({ x: x, y: y + 1 });
+     if (
+        (x + 1) % 9 != 0 &&
+        !cell.nextSibling?.classList.contains("activated-border")
+    )
+        coordinates.push({ x: x + 1, y: y });
+    if (
+        x % 9 != 0 &&
+        !cell.previousSibling?.classList.contains("activated-border")
+    )
+        coordinates.push({ x: x - 1, y: y });
 
-     const otherPlayer = Game.current() == Player1 ? Player2 : Player1;
     const id_to_change = coordinates.findIndex(
         ({ x, y }) => x == otherPlayer.x && y == otherPlayer.y
     );
@@ -99,7 +103,7 @@ export const DisplayAvailableMoves = (cell, id) => {
                         "activated-border"
                     ))) ||
             (diff.y == 1 &&
-                (otherPlayer.x == 0 ||
+                (otherPlayer.y == 0 ||
                     allElems[gridCell_id - 3 * 17]?.classList.contains(
                         "activated-border"
                     )))
@@ -122,5 +126,5 @@ export const DisplayAvailableMoves = (cell, id) => {
          }
      }
 
-     AvailableMovesView(coordinates);
+     return coordinates;
  };
