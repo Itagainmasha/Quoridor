@@ -1,12 +1,12 @@
-import Game from "models/game.js";
+import Game from "./models/game.js";
 //import Init from "models/init.js";
 import {
     InitBorderEvents,
     InitField,
     RenderField,
-} from "controllers/field_controller.js";
-import { RenderPlayers } from "/views/render_players.js";
-import { InitBtnStartEvents } from "./controllers/GameController.js";
+} from "./controllers/field_controller.js";
+import { RenderPlayers } from "./views/render_players.js";
+import { InitBtnStartEvents } from "./controllers/game_controller.js";
 InitField();
 
 /*document.querySelector("#game_pl_comp").addEventListener("click", (e) => {

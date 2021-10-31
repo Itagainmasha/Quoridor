@@ -1,10 +1,10 @@
-import Player1 from "models/player1.js";
- import Player2 from "models/player2.js";
- import Victory from "views/victory_view.js";
- import Field from "models/field.js";
- import Game from "models/Game.js";
- import Init from "models/Init.js";
- import { DisplayAvailableMoves, MakeAMove } from "./PlayersController.js";
+import Player1 from "../models/player1.js";
+ import Player2 from "../models/player2.js";
+ import Victory from "../views/victory_view.js";
+ import Field from "../models/field.js";
+ import Game from "../models/Game.js";
+ import Init from "../models/Init.js";
+ import { DisplayAvailableMoves, MakeAMove } from "./players_controller.js";
 export const checkVictory = () => {
     if (Player1.y == 0) {
         Victory("Player 1");

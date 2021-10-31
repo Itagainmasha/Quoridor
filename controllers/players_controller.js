@@ -1,15 +1,15 @@
 //const moved = new Event('pl_moved');
 
-import Game from "models/game.jss";
-import Init from "models/Init.js";
- import Player1 from "models/player1.js";
- import Player2 from "models/player2.js";
- import { RenderPlayers } from "views/render_playersView.js";
+import Game from "../models/game.js";
+import Init from "../models/Init.js";
+ import Player1 from "../models/player1.js";
+ import Player2 from "../models/player2.js";
+ import { RenderPlayers } from "../views/render_players.js";
  import {
      InitPlayerCellEvents,
      RemovePlayerCellEvents,
- } from "/field_controller.js";
- import { checkVictory, randomStep } from "./GameController.js";
+ } from "./field_controller.js";
+ import { checkVictory, randomStep } from "./game_controller.js";
 export const MakeAMove = (x, y) => {
     const player = Game.current();
    

@@ -1,5 +1,5 @@
-import Field from "models/field.js";
-import Init from "models/init.js";
+import Field from "../models/field.js";
+import Init from "../models/init.js";
 
 const Player1 = {
     x: parseInt(Field.size / 2),

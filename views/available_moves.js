@@ -1,4 +1,4 @@
-import { MakeAMove } from "views/available_moves.js";
+import { MakeAMove } from "../controllers/players_controller.js";
 
 const events = new Map;
 
