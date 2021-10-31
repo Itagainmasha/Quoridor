@@ -2,17 +2,17 @@
 
 import Game from "../models/game.js";
 import Init from "../models/Init.js";
- import Player1 from "../models/player1.js";
- import Player2 from "../models/player2.js";
- import { RenderPlayers } from "../views/render_players.js";
- import {
+import Player1 from "../models/player1.js";
+import Player2 from "../models/player2.js";
+import { RenderPlayers } from "../views/render_players.js";
+import {
      InitPlayerCellEvents,
      RemovePlayerCellEvents,
  } from "./field_controller.js";
- import { checkVictory, randomStep } from "./game_controller.js";
+import { checkVictory, randomStep } from "./game_controller.js";
+
 export const MakeAMove = (x, y) => {
     const player = Game.current();
-   
     Game.next_step();
     
     if (x >= 0 && y >= 0) {
@@ -25,12 +25,13 @@ export const MakeAMove = (x, y) => {
     InitPlayerCellEvents();
 
     checkVictory();
-};
 
 if (Game.game_type == Init.PLAYER_COMPUTER && Game.current_pl == "2") {
     debugger;
-    randomStep();
-}
+    randomStep();   
+    }
+};
+
 export const DisplayAvailableMoves = (player, { x, y }) => {
     if (x < 0 || x > 8 || y < 0 || y > 8) return [];
      let coordinates = [];
