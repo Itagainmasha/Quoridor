@@ -1,6 +1,6 @@
 import { InitBtnStartEvents, ResetConfigs } from "../controllers/game_controller.js";
  import { init_game } from "../quoridor_main.js";
- import { InitialFieldView } from "./field_view.js";
+ import { InitFieldView } from "./field_view.js";
 const VictoryView = (player) => {
     document.body.querySelector(".dark-back").style.display = "flex";
     document.body.querySelector(".dark-back").innerHTML = `
@@ -9,7 +9,7 @@ const VictoryView = (player) => {
     `;
 
     document.querySelector('#btn-restart').addEventListener('click', () => {
-        InitialFieldView();
+        InitFieldView();
         ResetConfigs();
         InitBtnStartEvents(init_game);
      }, { once: true });
