@@ -70,8 +70,11 @@ menu {
 	height: 100%;
 	background-color: rgba(7, 7, 7, 0.7);
 	position: absolute;
-	display: none;
 	z-index: 100;
+	flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 300px 0;
 }
 .player {
 	width: 45%;
@@ -95,12 +98,12 @@ menu {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	position: absolute;
-	left: 12%;
-	top: 220px;
 }
 .stat-wrapper h2 {
-	text-align: left;
+	padding-top: 17px;
+    text-align: center;
+    -webkit-text-stroke: white 0.4px;
+
 }
 .player-1-stat {
 	color: green;
@@ -114,7 +117,6 @@ menu {
 	color: lightcyan;
 	text-transform: uppercase;
 	text-align: center;
-	margin-top: 40%;
 }
 
 .hovered-border {
@@ -157,5 +159,9 @@ menu {
     width: 2.93%;
     /* margin: 4px; */
 }
+#btn-restart {
+	padding: 4px 7px;
+	font-size: 18pt;
 
+} 
 /* todo cell, border, view for victory phase ++++++++

@@ -3,6 +3,7 @@ import { MakeAMove } from "../controllers/players_controller.js";
 const events = new Map;
 
  export const AvailableMovesView = (coordinates) => {
+    ClearAvailableView();
 
      const cells = Array.from(document.querySelectorAll(".cell"));
      coordinates.forEach(({ x, y }) => {
